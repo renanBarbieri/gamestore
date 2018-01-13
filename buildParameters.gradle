@@ -1,0 +1,160 @@
+ext {
+    flavors = [
+            apps: [
+                    APP_NAME: [
+                            partnerTimDebug : 'Tim Apps Debug',
+                            partnerTimRelease  : 'Tim Apps',
+                            partnerVivoDebug : 'Vivo Apps Debug',
+                            partnerVivoRelease  : 'Vivo Apps',
+
+                            debug : 'Apps Debug',
+                            release  : 'Apps Release'
+                    ],
+
+                    APPLICATION_ID: [
+                            partnerTimDebug     : 'br.com.renanbarbieri.bemobi_challenge.tim.apps.dev',
+                            partnerTimRelease   : 'br.com.renanbarbieri.bemobi_challenge.tim.apps',
+                            partnerVivoDebug    : 'br.com.renanbarbieri.bemobi_challenge.vivo.apps.dev',
+                            partnerVivoRelease  : 'br.com.renanbarbieri.bemobi_challenge.vivo.apps',
+
+                            debug  : 'br.com.renanbarbieri.bemobi_challenge.debug.apps',
+                            release  : 'br.com.renanbarbieri.bemobi_challenge.release.apps'
+                    ],
+
+                    API_URL : [
+                            type  : 'BuildConfig',
+                            values: [
+                                    partnerTimDebug     : 'http://private-1090ec-timberhb.apiary-mock.com/apps/apps?z={zone}',
+                                    partnerTimRelease   : 'http://private-1090ec-timberhb.apiary-mock.com/apps/apps?z={zone}',
+                                    partnerVivoDebug    : 'http://private-c75b53-vivoberhb.apiary-mock.com/apps/apps?z={zone}',
+                                    partnerVivoRelease  : 'http://private-c75b53-vivoberhb.apiary-mock.com/apps/apps?z={zone}',
+
+                                    debug  : 'http://private-c75b53-vivoberhb.apiary-mock.com/apps/apps?z={zone}',
+                                    release  : 'http://private-c75b53-vivoberhb.apiary-mock.com/apps/apps?z={zone}'
+                            ]
+                    ]
+            ],
+
+            games: [
+                    APP_NAME: [
+                            partnerTimDebug : 'Tim Games Debug',
+                            partnerTimRelease  : 'Tim Games',
+                            partnerVivoDebug : 'Vivo Games Debug',
+                            partnerVivoRelease  : 'Vivo Games',
+
+                            debug : 'Games Debug',
+                            release  : 'Games Release'
+                    ],
+
+                    APPLICATION_ID: [
+                            partnerTimDebug     : 'br.com.renanbarbieri.bemobi_challenge.tim.games.dev',
+                            partnerTimRelease   : 'br.com.renanbarbieri.bemobi_challenge.tim.games',
+                            partnerVivoDebug    : 'br.com.renanbarbieri.bemobi_challenge.vivo.games.dev',
+                            partnerVivoRelease  : 'br.com.renanbarbieri.bemobi_challenge.vivo.games',
+
+                            debug  : 'br.com.renanbarbieri.bemobi_challenge.debug.games',
+                            release  : 'br.com.renanbarbieri.bemobi_challenge.release.games'
+                    ],
+
+                    API_URL : [
+                            type  : 'BuildConfig',
+                            values: [
+                                    partnerTimDebug     : 'http://private-1090ec-timberhb.apiary-mock.com/apps/games?z={zone}',
+                                    partnerTimRelease   : 'http://private-1090ec-timberhb.apiary-mock.com/apps/games?z={zone}',
+                                    partnerVivoDebug    : 'http://private-c75b53-vivoberhb.apiary-mock.com/apps/games?z={zone}',
+                                    partnerVivoRelease  : 'http://private-c75b53-vivoberhb.apiary-mock.com/apps/games?z={zone}',
+
+                                    debug  : 'http://private-c75b53-vivoberhb.apiary-mock.com/apps/games?z={zone}',
+                                    release  : 'http://private-c75b53-vivoberhb.apiary-mock.com/apps/games?z={zone}'
+                            ]
+                    ]
+            ],
+
+            kids: [
+                    APP_NAME: [
+                            partnerTimDebug : 'Tim Kids Debug',
+                            partnerTimRelease  : 'Tim Kids',
+                            partnerVivoDebug : 'Vivo Kids Debug',
+                            partnerVivoRelease  : 'Vivo Kids',
+
+                            debug : 'Kids Debug',
+                            release  : 'Kids Release'
+                    ],
+
+                    APPLICATION_ID: [
+                            partnerTimDebug     : 'br.com.renanbarbieri.bemobi_challenge.tim.kids.dev',
+                            partnerTimRelease   : 'br.com.renanbarbieri.bemobi_challenge.tim.kids',
+                            partnerVivoDebug    : 'br.com.renanbarbieri.bemobi_challenge.vivo.kids.dev',
+                            partnerVivoRelease  : 'br.com.renanbarbieri.bemobi_challenge.vivo.kids',
+
+                            debug  : 'br.com.renanbarbieri.bemobi_challenge.debug.kids',
+                            release  : 'br.com.renanbarbieri.bemobi_challenge.release.kids'
+                    ],
+
+                    API_URL : [
+                            type  : 'BuildConfig',
+                            values: [
+                                    partnerTimDebug     : 'http://private-1090ec-timberhb.apiary-mock.com/kids/apps?z={zone}',
+                                    partnerTimRelease   : 'http://private-1090ec-timberhb.apiary-mock.com/kids/apps?z={zone}',
+                                    partnerVivoDebug    : 'http://private-c75b53-vivoberhb.apiary-mock.com/kids/apps?z={zone}',
+                                    partnerVivoRelease  : 'http://private-c75b53-vivoberhb.apiary-mock.com/kids/apps?z={zone}',
+
+                                    debug  : 'http://private-c75b53-vivoberhb.apiary-mock.com/apps/kids?z={zone}',
+                                    release  : 'http://private-c75b53-vivoberhb.apiary-mock.com/apps/kids?z={zone}'
+                            ]
+                    ]
+            ]
+
+//            partner_tim: [
+//                    APP_NAME: [
+//                            debug : 'Tim Debug',
+//                            apps  : 'Tim Apps',
+//                            games : 'Tim Games',
+//                            kids  : 'Tim Kids'
+//                    ],
+//
+//                    APPLICATION_ID: [
+//                            debug : 'br.com.renanbarbieri.bemobi_challenge.tim.dev',
+//                            apps  : 'br.com.renanbarbieri.bemobi_challenge.tim.apps',
+//                            games : 'br.com.renanbarbieri.bemobi_challenge.tim.games',
+//                            kids  : 'br.com.renanbarbieri.bemobi_challenge.tim.kids'
+//                    ],
+//
+//                    API_URL : [
+//                            type  : 'BuildConfig',
+//                            values: [
+//                                    debug : 'http://private-1090ec-timberhb.apiary-mock.com/apps/apps?z={zone}',
+//                                    apps  : 'http://private-1090ec-timberhb.apiary-mock.com/apps/apps?z={zone}',
+//                                    games : 'http://private-1090ec-timberhb.apiary-mock.com/apps/games?z={zone}',
+//                                    kids  : 'http://private-1090ec-timberhb.apiary-mock.com/apps/kids?z={zone}'
+//                            ]
+//                    ]
+//            ],
+//
+//            partner_vivo: [
+//                    APP_NAME: [
+//                            debug : 'Vivo Debug',
+//                            apps  : 'Vivo Apps',
+//                            games : 'Vivo Games',
+//                            kids  : 'Vivo Kids'
+//                    ],
+//
+//                    APPLICATION_ID: [
+//                            debug : 'br.com.renanbarbieri.bemobi_challenge.vivo.dev',
+//                            apps  : 'br.com.renanbarbieri.bemobi_challenge.vivo.apps',
+//                            games : 'br.com.renanbarbieri.bemobi_challenge.vivo.games',
+//                            kids  : 'br.com.renanbarbieri.bemobi_challenge.vivo.kids'
+//                    ],
+//
+//                    API_URL : [
+//                            type  : 'BuildConfig',
+//                            values: [
+//                                    debug : 'http://private-c75b53-vivoberhb.apiary-mock.com/apps/apps?z={zone}',
+//                                    apps  : 'http://private-c75b53-vivoberhb.apiary-mock.com/apps/apps?z={zone}',
+//                                    games : 'http://private-c75b53-vivoberhb.apiary-mock.com/apps/games?z={zone}',
+//                                    kids  : 'http://private-c75b53-vivoberhb.apiary-mock.com/apps/kids?z={zone}'
+//                            ]
+//                    ]
+//            ],
+    ]
+}
