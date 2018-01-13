@@ -1,0 +1,139 @@
+apply from: 'buildParameters.gradle'
+
+ext {
+    BOOLEAN = "boolean"
+    INT_ARRAY = "Integer[]"
+    INT = "int"
+    STRING = "String"
+
+    // Used to identify the build parameter type in buildParameters.gradle
+    BuildParameterType = "type"
+    // Used to identify the build parameter values in buildParameters.gradle
+    BuildParameterValues = "values"
+
+    // Supported categories of build parameters
+    BuildConfig = "BuildConfig"
+    ResValue = "ResValue"
+
+
+    setupBuildParameters = { variant, flavor ->
+        flavorData = rootProject.ext["flavors"].get(flavor.name)
+        setVariantAppName(variant, flavorData)
+        setVariantApplicationId(variant, flavorData)
+
+        flavorData.each { parameterKey, parameter ->
+            setVariantBuildParameter(variant, parameterKey, parameter)
+
+        }
+
+        variant.outputs.each { output ->
+            output.outputFileName = genApkName(variant, flavorData)
+        }
+
+        println("================================================================")
+    }
+
+    getVariantBuildParameterValue = { variant, parameter ->
+        def value
+        try {
+            if (parameter instanceof Map) {
+                def values = parameter[BuildParameterValues]
+                if (values != null) {
+                    value = values["$variant.buildType.name"]
+                } else {
+                    value = parameter["$variant.buildType.name"]
+                }
+            } else {
+                value = parameter
+            }
+
+            return value
+        } catch (Exception e) {
+            e.printStackTrace()
+        }
+    }
+
+    setVariantBuildParameter = { variant, parameterKey, parameter ->
+        def value
+        try {
+            value = getVariantBuildParameterValue(variant, parameter)
+            if (parameter instanceof Map) {
+                type = parameter[BuildParameterType]
+                if (type == BuildConfig) {
+                    setVariantBuildConfig(variant, parameterKey, value)
+                } else if (type == ResValue) {
+                    setVariantResValue(variant, parameterKey, value)
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace()
+        }
+    }
+
+    setVariantBuildConfig = { variant, key, value ->
+        try {
+            if (value instanceof String) {
+                variant.buildConfigField STRING, key, "\"${value}\""
+            } else {
+                variant.buildConfigField value.getClass().getSimpleName(), key, "${value}"
+            }
+            println("setVariantBuildConfig: " + key + " -> " + value)
+        } catch (Exception e) {
+            e.printStackTrace()
+        }
+    }
+
+    setVariantResValue = { variant, key, value ->
+        try {
+            if (value instanceof String) {
+                variant.resValue STRING.toLowerCase(), key, "${value}"
+            } else {
+                variant.resValue value.getClass().getSimpleName().toLowerCase(), key, "${value}"
+            }
+            println("setVariantResValue: " + key + " -> " + value)
+        } catch (Exception e) {
+            e.printStackTrace()
+        }
+    }
+
+    setVariantAppName = { variant, flavorData ->
+        println("flavor: "+flavorData.APP_NAME)
+        def flavorAppName = flavorData.APP_NAME
+        if(flavorAppName != null){
+            println("buildType: "+variant.buildType.name)
+            def value = flavorAppName[variant.buildType.name]
+            if(value != null){
+                setVariantResValue(variant, "app_name", value)
+            }
+            println("applicationName: " +  value)
+        }
+    }
+
+    setVariantApplicationId = { variant, flavorData ->
+        def value = flavorData.APPLICATION_ID[variant.buildType.name]
+        variant.mergedFlavor.setApplicationId(value)
+        println("applicationId: " + value)
+    }
+
+    genApkName = { variant, flavorData ->
+
+        def outputAppName = flavorData.APP_NAME[variant.buildType.name].replace(" ", "").toUpperCase()
+        def outputVersion = variant.versionName.replace(".", "-")
+        def outputVersionCode = "VC" + flavorData.versionCode
+        def outputBuildType = variant.buildType.name.toUpperCase()
+        def outputSuffix = ".apk"
+        def outputName = new StringBuilder()
+        outputName.append(outputAppName)
+        outputName.append("-")
+        outputName.append(outputVersion)
+        outputName.append("-")
+        outputName.append(outputVersionCode)
+        outputName.append("-")
+        outputName.append(outputBuildType)
+        outputName.append(outputSuffix)
+        return outputName.toString()
+    }
+
+}
+
