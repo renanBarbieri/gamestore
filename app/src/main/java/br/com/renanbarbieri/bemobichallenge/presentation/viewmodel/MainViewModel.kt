@@ -30,12 +30,12 @@ class MainViewModel : BaseViewModel<MainContract.View>(), MainContract.ViewModel
      * Require to available apps use case to get the most recent list of apps available.
      * Update the observable with result acquired
      */
-    override fun loadAvailableApps(): BaseLiveData<MainModel> {
+    override fun loadAvailableApps(countryCode: String): BaseLiveData<MainModel> {
         availableAppsLiveData.guard {
             availableAppsLiveData = BaseLiveData()
         }
 
-        getAvailableAppsUseCase.execute(object : UseCase.UseCaseCallback<ArrayList<AppEntity>>{
+        getAvailableAppsUseCase.execute(countryCode, object : UseCase.UseCaseCallback<ArrayList<AppEntity>>{
             override fun onSuccess(response: ArrayList<AppEntity>) {
                 val result = MainPresentationMapper.fromEntity(response)
                 val returnLiveData = ReturnLiveData(value = result)

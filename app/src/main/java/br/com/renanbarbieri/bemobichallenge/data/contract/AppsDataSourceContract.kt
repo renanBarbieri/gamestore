@@ -7,6 +7,6 @@ import br.com.renanbarbieri.bemobichallenge.domain.entity.AppEntity
  */
 interface AppsDataSourceContract {
 
-    fun fetchApps(callback: SourceBaseCallback<ArrayList<AppEntity>>)
+    fun fetchApps(countryCode: String, callback: SourceBaseCallback<ArrayList<AppEntity>>)
 
 }

@@ -15,7 +15,7 @@ interface MainContract {
     }
 
     interface ViewModel{
-        fun loadAvailableApps(): BaseLiveData<MainModel>
+        fun loadAvailableApps(countryCode: String): BaseLiveData<MainModel>
     }
 
 }

@@ -13,7 +13,7 @@ interface AppsInterface {
 
     @GET(BuildConfig.API_PATH)
     fun getAvailableApps(
-            @Query("z") zone: Int
+            @Query("z") zone: String
     ): Call<AvailableAppsResponse>
 
 }

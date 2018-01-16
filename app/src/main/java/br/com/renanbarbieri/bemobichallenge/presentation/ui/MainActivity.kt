@@ -1,14 +1,16 @@
 package br.com.renanbarbieri.bemobichallenge.presentation.ui
 
 import android.arch.lifecycle.ViewModelProviders
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
+import android.telephony.TelephonyManager
 import br.com.renanbarbieri.bemobichallenge.R
 import br.com.renanbarbieri.bemobichallenge.extensions.info
 import br.com.renanbarbieri.bemobichallenge.presentation.contract.MainContract
-import br.com.renanbarbieri.bemobichallenge.presentation.viewmodel.MainViewModel
 import br.com.renanbarbieri.bemobichallenge.presentation.liveData.BaseObserver
 import br.com.renanbarbieri.bemobichallenge.presentation.model.MainModel
+import br.com.renanbarbieri.bemobichallenge.presentation.viewmodel.MainViewModel
+
 
 class MainActivity : AppCompatActivity(), MainContract.View {
 
@@ -28,7 +30,11 @@ class MainActivity : AppCompatActivity(), MainContract.View {
     private fun initViewModel(){
         viewModel = ViewModelProviders.of(this)[MainViewModel::class.java]
         viewModel?.initialize(this)
-        viewModel?.loadAvailableApps()?.observe(this,  object : BaseObserver<MainModel>{
+
+        val tm = getSystemService(TELEPHONY_SERVICE) as TelephonyManager
+        val countryCode = tm.simCountryIso
+
+        viewModel?.loadAvailableApps(countryCode)?.observe(this,  object : BaseObserver<MainModel>{
             override fun onSuccess(result: MainModel) {
                 mainView = result
 
