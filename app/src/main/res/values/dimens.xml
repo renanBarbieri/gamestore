@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="itemAppName">20sp</dimen>
+    <dimen name="itemAppPrice">18sp</dimen>
+    <dimen name="itemAppOriginalPrice">14sp</dimen>
+    <dimen name="itemAppIconHeight">140dp</dimen>
+    <dimen name="itemAppIconWidth">140dp</dimen>
+    <dimen name="itemAppMargin">14dp</dimen>
+</resources>
