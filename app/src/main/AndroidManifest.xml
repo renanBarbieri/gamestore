@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--suppress AndroidDomInspection -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="br.com.renanbarbieri.bemobi_challenge">
+    package="br.com.renanbarbieri.bemobichallenge">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="false"
