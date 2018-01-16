@@ -4,6 +4,7 @@ import android.arch.lifecycle.ViewModelProviders
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import br.com.renanbarbieri.bemobichallenge.R
+import br.com.renanbarbieri.bemobichallenge.extensions.info
 import br.com.renanbarbieri.bemobichallenge.presentation.contract.MainContract
 import br.com.renanbarbieri.bemobichallenge.presentation.viewmodel.MainViewModel
 import br.com.renanbarbieri.bemobichallenge.presentation.liveData.BaseObserver
@@ -20,12 +21,18 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         initViewModel()
     }
 
+    /**
+     * Initialize the view model to interact with it
+     * Besides, request for available apps
+     */
     private fun initViewModel(){
         viewModel = ViewModelProviders.of(this)[MainViewModel::class.java]
         viewModel?.initialize(this)
         viewModel?.loadAvailableApps()?.observe(this,  object : BaseObserver<MainModel>{
             override fun onSuccess(result: MainModel) {
                 mainView = result
+
+                info(mainView.toString())
                 //maybe we need to update the view
             }
 

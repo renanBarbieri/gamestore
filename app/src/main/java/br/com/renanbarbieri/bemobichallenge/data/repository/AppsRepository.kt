@@ -18,7 +18,10 @@ import retrofit2.Response
  */
 object AppsRepository: AppsDataSourceContract{
 
-
+    /**
+     * Call RestAPI to get the apps.
+     * The API URL is defined at buildParameters.gradle
+     */
     override fun fetchApps(callback: SourceBaseCallback<ArrayList<AppEntity>>) {
         RestAPI.appsAPI.getAvailableApps(zone = 4).enqueue(object : Callback<AvailableAppsResponse>{
             override fun onResponse(call: Call<AvailableAppsResponse>?, response: Response<AvailableAppsResponse>?) {

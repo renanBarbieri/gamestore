@@ -10,7 +10,7 @@ interface BaseObserver<T> : Observer<ReturnLiveData<T>> {
     override fun onChanged(result: ReturnLiveData<T>?) {
         result?.let {
             it.error?.let {
-                onError(it.message, it.errorCode.code)
+                onError(it.messageRes, it.errorCode.code)
                 return
             }
 
@@ -23,7 +23,7 @@ interface BaseObserver<T> : Observer<ReturnLiveData<T>> {
         onEmptyResult()
     }
 
-    fun onError(message: String, code: Int) {}
+    fun onError(message: Int, code: Int) {}
     fun onSuccess(result: T)
     fun onEmptyResult() {}
 }

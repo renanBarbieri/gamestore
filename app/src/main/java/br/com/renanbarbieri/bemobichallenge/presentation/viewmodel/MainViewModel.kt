@@ -27,6 +27,8 @@ class MainViewModel : BaseViewModel<MainContract.View>(), MainContract.ViewModel
 
     /**
      * Implements MainContract.ViewModel
+     * Require to available apps use case to get the most recent list of apps available.
+     * Update the observable with result acquired
      */
     override fun loadAvailableApps(): BaseLiveData<MainModel> {
         availableAppsLiveData.guard {
