@@ -1,10 +1,10 @@
 package br.com.renanbarbieri.bemobichallenge.data.repository.rest
 
-import br.com.renanbarbieri.bemobi_challenge.BuildConfig
+import br.com.renanbarbieri.bemobichallenge.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
-import retrofit2.converter.moshi.MoshiConverterFactory
+import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 /**
@@ -17,7 +17,7 @@ object RestAPI {
     init {
         val retrofit = Retrofit.Builder()
                 .baseUrl(BuildConfig.API_DOMAIN)
-                .addConverterFactory(MoshiConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
                 .client(getOkHttp())
                 .build()
 
