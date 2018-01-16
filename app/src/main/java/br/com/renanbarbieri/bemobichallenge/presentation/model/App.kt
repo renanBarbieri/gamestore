@@ -1,5 +1,7 @@
 package br.com.renanbarbieri.bemobichallenge.presentation.model
 
+import android.graphics.Bitmap
+
 /**
  * Created by renan on 13/01/18.
  */
@@ -13,7 +15,7 @@ class App (
     val iconUrl: String,
     val producer: String,
     val details: String,
-    val previewsUrl: ArrayList<String>,
+    val previews: ArrayList<Bitmap>,
     val size: Int,
     val badges: ArrayList<Badge>,
     val ratingCount: Int,

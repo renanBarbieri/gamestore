@@ -3,7 +3,7 @@ package br.com.renanbarbieri.bemobichallenge.data.repository
 import br.com.renanbarbieri.bemobichallenge.data.contract.AppsDataSourceContract
 import br.com.renanbarbieri.bemobichallenge.data.contract.SourceBaseCallback
 import br.com.renanbarbieri.bemobichallenge.data.model.AvailableAppsResponse
-import br.com.renanbarbieri.bemobichallenge.data.repository.mapper.AppMapper
+import br.com.renanbarbieri.bemobichallenge.data.repository.mapper.AppDataMapper
 import br.com.renanbarbieri.bemobichallenge.data.repository.rest.RestAPI
 import br.com.renanbarbieri.bemobichallenge.domain.entity.AppEntity
 import retrofit2.Call
@@ -24,7 +24,7 @@ object AppsRepository: AppsDataSourceContract{
                 response?.let {
                     if(response.isSuccessful){
                         response.body()?.let {
-                            callback.onSuccess(AppMapper.toEntityList(it.result))
+                            callback.onSuccess(AppDataMapper.toEntityList(it.result))
                             return
                         }
                         callback.onError(br.com.renanbarbieri.bemobichallenge.data.model.Error(
