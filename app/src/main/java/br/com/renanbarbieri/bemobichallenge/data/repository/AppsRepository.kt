@@ -6,6 +6,7 @@ import br.com.renanbarbieri.bemobichallenge.data.model.AvailableAppsResponse
 import br.com.renanbarbieri.bemobichallenge.data.repository.mapper.AppDataMapper
 import br.com.renanbarbieri.bemobichallenge.data.repository.rest.RestAPI
 import br.com.renanbarbieri.bemobichallenge.domain.entity.AppEntity
+import br.com.renanbarbieri.bemobichallenge.presentation.liveData.model.ErrorLiveData
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -29,7 +30,7 @@ object AppsRepository: AppsDataSourceContract{
                         }
                         callback.onError(br.com.renanbarbieri.bemobichallenge.data.model.Error(
                                 message = "Body is null",
-                                code = null
+                                code = ErrorLiveData.ErrorCode.ERROR_CODE_BODY_NULL
                         ))
                         return
                     }
@@ -42,7 +43,7 @@ object AppsRepository: AppsDataSourceContract{
 
                 callback.onError(br.com.renanbarbieri.bemobichallenge.data.model.Error(
                         message = null,
-                        code = null
+                        code = ErrorLiveData.ErrorCode.ERROR_CODE_HTTP_NO_RESPONSE
                 ))
             }
 

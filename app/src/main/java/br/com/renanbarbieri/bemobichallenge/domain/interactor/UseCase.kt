@@ -9,7 +9,7 @@ abstract class UseCase<T> {
 
     interface UseCaseCallback<T>{
         fun onSuccess(response: T)
-        fun onError(codeMessage: Int)
+        fun onError(code: Int)
     }
 
 }
