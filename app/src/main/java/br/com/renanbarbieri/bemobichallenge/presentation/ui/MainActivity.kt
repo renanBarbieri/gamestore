@@ -21,8 +21,9 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity(), MainContract.View, AppAdapter.AppAdapterListener {
     private var viewModel: MainViewModel? = null
 
-    private var mainView = MainModel()
+    var mainView = MainModel()
     private var appsAdapter: AppAdapter? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

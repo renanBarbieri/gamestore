@@ -9,12 +9,16 @@ import org.robolectric.Robolectric
 import org.robolectric.RobolectricTestRunner
 
 /**
- * Example local unit test, which will execute on the development machine (host).
  *
- * @see [Testing documentation](http://d.android.com/tools/testing)
  */
 @RunWith(RobolectricTestRunner::class)
 class MainActivityTest {
+
+    @Test
+    fun onInitShouldSetupMainView(){
+        val mainActivity = Robolectric.setupActivity(MainActivity::class.java) as MainActivity
+        assertNotNull(mainActivity.mainView)
+    }
 
     @Test
     fun onCreateShouldInflateRecyclerView() {
