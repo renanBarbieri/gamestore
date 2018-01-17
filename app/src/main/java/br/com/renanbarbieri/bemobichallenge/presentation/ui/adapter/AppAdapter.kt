@@ -30,8 +30,8 @@ class AppAdapter(private val context: Context, val data: ArrayList<AppModel>):
 
     override fun onBindViewHolder(holder: ViewHolder?, position: Int) {
         val currApp = data[position]
-        val currAppPrice = currApp.currency+" "+"%.2f".format(currApp.price)
-        val origAppPrice = currApp.currency+" "+"%.2f".format(currApp.originalPrice)
+        val currAppPrice = context.getString(R.string.pricePattern, currApp.currency, currApp.price.toFloat())
+        val origAppPrice = context.getString(R.string.pricePattern, currApp.currency, currApp.originalPrice.toFloat())
 
         holder?.bind(currApp.name, currAppPrice, origAppPrice, currApp.icon.url, position, adapterListener)
     }

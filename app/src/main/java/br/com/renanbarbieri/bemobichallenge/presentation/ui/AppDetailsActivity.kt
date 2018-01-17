@@ -1,15 +1,19 @@
 package br.com.renanbarbieri.bemobichallenge.presentation.ui
 
 import android.content.Intent
+import android.graphics.Paint
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v4.widget.NestedScrollView
 import android.support.v7.app.AppCompatActivity
+import br.com.renanbarbieri.bemobichallenge.GlideApp
 import br.com.renanbarbieri.bemobichallenge.R
 import br.com.renanbarbieri.bemobichallenge.presentation.model.AppModel
 import br.com.renanbarbieri.bemobichallenge.presentation.model.DetailsModel
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import kotlinx.android.synthetic.main.activity_app_details.*
 import kotlinx.android.synthetic.main.content_app_details.*
+import kotlinx.android.synthetic.main.item_app.view.*
 
 class AppDetailsActivity : AppCompatActivity() {
 
@@ -53,5 +57,28 @@ class AppDetailsActivity : AppCompatActivity() {
                 }
             }
         })
+
+        populateView()
+    }
+
+    private fun populateView(){
+        detailsView?.let {
+            tvAppName.text = it.app.name
+            tvAppProducer.text = it.app.producer
+            tvAppPrice.text = getString(R.string.pricePattern, it.app.currency, it.app.price.toFloat())
+            tvAppOriginalPrice.text = getString(R.string.pricePattern, it.app.currency, it.app.originalPrice.toFloat())
+            tvAppOriginalPrice.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
+            tvAppSize.text = getString(R.string.sizePattern, it.app.size)
+            tvAppRating.text = it.app.ratingGrade.toString()
+            tvAppRatingCount.text = getString(R.string.ratingPattern, it.app.ratingCount)
+            tvAppDescription.text = it.app.details
+            rbAppRating.rating = it.app.ratingGrade.toFloat()
+
+            GlideApp.with(this)
+                    .load(it.app.icon.url)
+                    .placeholder(R.drawable.placeholder_300x300)
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .into(ivAppIcon.ivAppIcon)
+        }
     }
 }

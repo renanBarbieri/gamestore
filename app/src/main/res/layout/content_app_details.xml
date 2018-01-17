@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:id="@+id/nsvAppDetailsContent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="br.com.renanbarbieri.bemobichallenge.presentation.ui.AppDetailsActivity"
@@ -12,7 +12,7 @@
     <android.support.constraint.ConstraintLayout
         android:layout_margin="@dimen/itemAppMargin"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/ivAppIcon"
@@ -69,7 +69,7 @@
             android:layout_marginStart="8dp"
             android:textStyle="bold"
             android:textColor="@color/colorAccent"
-            android:textSize="@dimen/itemAppPrice"
+            android:textSize="@dimen/itemAppName"
             android:text="R$ 0.00"
             app:layout_constraintBottom_toTopOf="@+id/tvAppOriginalPrice"
             app:layout_constraintEnd_toEndOf="parent"
@@ -124,6 +124,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:numStars="5"
+            android:max="5"
+            android:isIndicator="true"
             style="?android:attr/ratingBarStyleIndicator"
             android:layout_marginLeft="@dimen/itemAppPadding"
             app:layout_constraintEnd_toEndOf="parent"
@@ -163,7 +165,8 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:textStyle="bold"
-            android:text="Descrição"
+            android:textSize="@dimen/itemAppName"
+            android:text="@string/description"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rvPreviews" />
@@ -175,9 +178,10 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
-            android:text="Lorem Ipsum"
+            android:paddingBottom="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvDescriptionLabel" />
 
 

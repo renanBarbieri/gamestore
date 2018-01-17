@@ -1,5 +1,11 @@
 <resources>
 
+    <string name="ratingPattern">%1$d\n Avaliações</string>
+    <string name="sizePattern">%1$d MB</string>
+    <string name="pricePattern">%1$s %2$.2f</string>
+
+    <string name="description">Descrição</string>
+
     <string name="title_activity_app_details">App Details</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
