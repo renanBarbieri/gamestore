@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--TextSizes-->
+    <dimen name="appRating">28sp</dimen>
+    <dimen name="appRatingCount">10sp</dimen>
+    <dimen name="itemAppName">18sp</dimen>
+    <dimen name="itemAppPrice">15sp</dimen>
+    <dimen name="itemAppOriginalPrice">12sp</dimen>
+
+    <!--Screen Sizes-->
+    <dimen name="itemAppCardHeight">280dp</dimen>
+    <dimen name="itemAppIconHeight">140dp</dimen>
+    <dimen name="itemAppIconWidth">140dp</dimen>
+    <dimen name="itemAppPreviewHeight">100dp</dimen>
+    <dimen name="itemAppBadgeHeight">60dp</dimen>
+    <dimen name="itemAppBadgeWidth">60dp</dimen>
+    <dimen name="itemAppMargin">10dp</dimen>
+    <dimen name="itemAppPadding">8dp</dimen>
+    <dimen name="app_bar_height">220dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+</resources>

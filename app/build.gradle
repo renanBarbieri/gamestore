@@ -1,33 +1,88 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 27
     defaultConfig {
-        applicationId "br.com.renanbarbieri.bemobi_challenge"
-        minSdkVersion 15
-        targetSdkVersion 26
+        minSdkVersion 19
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        flavorDimensions "default"
+        vectorDrawables.useSupportLibrary = true
     }
+    applicationVariants.all { variant ->
+        variant.productFlavors.each { flavor ->
+            setupBuildParameters(variant, flavor)
+        }
+    }
+
+    productFlavors {
+        apps {}
+        games {}
+        kids {}
+    }
+
     buildTypes {
+        debug {
+            debuggable true
+        }
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        partnerTimDebug {
+            debuggable true
+            signingConfig signingConfigs.debug
+        }
+        partnerTimRelease {
+
+        }
+        partnerVivoDebug {
+            debuggable true
+            signingConfig signingConfigs.debug
+        }
+        partnerVivoRelease {
+        }
+    }
+
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
         }
     }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation "com.android.support:appcompat-v7:$support_version"
+    implementation "com.android.support:cardview-v7:$support_version"
+    implementation "com.android.support:design:$support_version"
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+
+    // ViewModel and LiveData
+    implementation "android.arch.lifecycle:extensions:$arch_version"
+    kapt "android.arch.lifecycle:compiler:$arch_version"
+
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+
+    //OK Http"
+    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+
+    //GSON
+    implementation 'com.google.code.gson:gson:2.8.2'
+
+    //Glide
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    kapt "com.github.bumptech.glide:compiler:$glide_version"
+
     testImplementation 'junit:junit:4.12'
+    testImplementation "org.robolectric:robolectric:3.6.1"
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 }
