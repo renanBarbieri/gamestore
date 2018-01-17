@@ -1,63 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<android.support.v7.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="5dp"
     android:layout_margin="@dimen/itemAppMargin"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="@dimen/itemAppCardHeight">
+
+    <android.support.constraint.ConstraintLayout
+        android:paddingBottom="@dimen/itemAppPadding"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
 
 
-    <ImageView
-        android:id="@+id/ivAppIcon"
-        android:layout_width="@dimen/itemAppIconWidth"
-        android:layout_height="@dimen/itemAppIconHeight"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/placeholder_300x300" />
+        <ImageView
+            android:id="@+id/ivAppIcon"
+            android:layout_width="@dimen/itemAppIconWidth"
+            android:layout_height="@dimen/itemAppIconHeight"
+            android:layout_marginEnd="@dimen/itemAppPadding"
+            android:layout_marginStart="@dimen/itemAppPadding"
+            android:layout_marginTop="@dimen/itemAppPadding"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/placeholder_300x300" />
 
-    <TextView
-        android:id="@+id/tvAppName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="16dp"
-        android:text="Super KO Boxing 2"
-        android:textSize="@dimen/itemAppName"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/ivAppIcon"
-        app:layout_constraintTop_toBottomOf="@+id/ivAppIcon" />
+        <TextView
+            android:id="@+id/tvAppName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/itemAppPadding"
+            android:layout_marginRight="@dimen/itemAppPadding"
+            android:layout_marginTop="@dimen/itemAppPadding"
+            android:text="Super KO Boxing 2"
+            android:textSize="@dimen/itemAppName"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/ivAppIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/ivAppIcon" />
 
-    <TextView
-        android:id="@+id/tvAppPrice"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:text="R$ 0.00"
-        android:textStyle="bold"
-        android:textSize="@dimen/itemAppPrice"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/tvAppName"
-        app:layout_constraintTop_toBottomOf="@+id/tvAppName" />
+        <TextView
+            android:id="@+id/tvAppPrice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/itemAppPadding"
+            android:layout_marginRight="@dimen/itemAppPadding"
+            android:layout_marginTop="@dimen/itemAppPadding"
+            android:text="R$ 0.00"
+            android:textStyle="bold"
+            android:textSize="@dimen/itemAppPrice"
+            app:layout_constraintBottom_toTopOf="@+id/tvAppOriginalPrice"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvAppName" />
 
-    <TextView
-        android:id="@+id/tvAppOriginalPrice"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:text="R$ 3.00"
-        android:textSize="@dimen/itemAppOriginalPrice"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/tvAppPrice"
-        app:layout_constraintTop_toBottomOf="@+id/tvAppPrice" />
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:id="@+id/tvAppOriginalPrice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/itemAppPadding"
+            android:layout_marginRight="@dimen/itemAppPadding"
+            android:layout_marginTop="@dimen/itemAppPadding"
+            android:text="R$ 3.00"
+            android:textSize="@dimen/itemAppOriginalPrice"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvAppPrice" />
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>
