@@ -25,7 +25,7 @@ class AppDetailsActivity : AppCompatActivity() {
     var previewAdapter: PreviewAdapter? = null
 
     companion object {
-        private val ARG_APP_SELECTED = AppDetailsActivity::class.java.canonicalName+"ARG_APP_SELECTED"
+        val ARG_APP_SELECTED = AppDetailsActivity::class.java.canonicalName+"ARG_APP_SELECTED"
 
         fun start(callerActivity: AppCompatActivity, appSelected: AppModel){
             val openThisActivity = Intent(callerActivity, AppDetailsActivity::class.java)
