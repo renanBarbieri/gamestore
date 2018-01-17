@@ -3,10 +3,12 @@ package br.com.renanbarbieri.bemobichallenge.presentation.ui
 import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
+import android.support.v4.widget.NestedScrollView
 import android.support.v7.app.AppCompatActivity
 import br.com.renanbarbieri.bemobichallenge.R
 import br.com.renanbarbieri.bemobichallenge.presentation.model.AppModel
 import kotlinx.android.synthetic.main.activity_app_details.*
+import kotlinx.android.synthetic.main.content_app_details.*
 
 class AppDetailsActivity : AppCompatActivity() {
 
@@ -24,10 +26,24 @@ class AppDetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_app_details)
         setSupportActionBar(toolbar)
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
-        }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        initView()
+    }
+
+    private fun initView(){
+        fab.setOnClickListener { view ->
+            Snackbar.make(view, "Função ainda não implementada", Snackbar.LENGTH_LONG).show()
+        }
+
+        nsvAppDetailsContent.setOnScrollChangeListener(NestedScrollView.OnScrollChangeListener { nestedScrollView, scrollX, scrollY, oldScrollX, oldScrollY ->
+            nestedScrollView?.let {
+                if (scrollY == (nestedScrollView.getChildAt(0).measuredHeight - nestedScrollView.measuredHeight)) {
+                    fab.hide()
+                }
+                else if(!fab.isShown){
+                    fab.show()
+                }
+            }
+        })
     }
 }
