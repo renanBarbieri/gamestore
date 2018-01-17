@@ -6,9 +6,9 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/ivItemPreviewImage"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/itemAppPreviewHeight"
         android:layout_margin="@dimen/itemAppPadding"
         android:background="@drawable/circle_blue"
         app:layout_constraintEnd_toEndOf="parent"

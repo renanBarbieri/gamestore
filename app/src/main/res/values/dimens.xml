@@ -11,6 +11,7 @@
     <dimen name="itemAppCardHeight">280dp</dimen>
     <dimen name="itemAppIconHeight">140dp</dimen>
     <dimen name="itemAppIconWidth">140dp</dimen>
+    <dimen name="itemAppPreviewHeight">100dp</dimen>
     <dimen name="itemAppBadgeHeight">60dp</dimen>
     <dimen name="itemAppBadgeWidth">60dp</dimen>
     <dimen name="itemAppMargin">10dp</dimen>
