@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/nsvAppDetailsContent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="br.com.renanbarbieri.bemobichallenge.presentation.ui.AppDetailsActivity"
+    tools:showIn="@layout/activity_app_details">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_margin="@dimen/itemAppMargin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivAppIcon"
+            android:layout_width="@dimen/itemAppIconWidth"
+            android:layout_height="@dimen/itemAppIconHeight"
+            android:background="@color/colorAccent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvAppName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:textStyle="bold"
+            android:text="Rayman Fiesta Run"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivAppIcon"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvAppProducer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Ubisoft"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivAppIcon"
+            app:layout_constraintTop_toBottomOf="@+id/tvAppName" />
+
+        <TextView
+            android:id="@+id/tvAppOriginalPrice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:text="R$ 3.00"
+            android:textSize="@dimen/itemAppOriginalPrice"
+            app:layout_constraintBottom_toBottomOf="@+id/ivAppIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivAppIcon" />
+
+        <TextView
+            android:id="@+id/tvAppPrice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/itemAppName"
+            android:text="R$ 0.00"
+            app:layout_constraintBottom_toTopOf="@+id/tvAppOriginalPrice"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivAppIcon" />
+
+        <View
+            android:id="@+id/lineDivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/itemAppPadding"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintTop_toBottomOf="@+id/ivAppIcon" />
+
+        <TextView
+            android:id="@+id/tvAppSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:text="11 MB"
+            app:layout_constraintBottom_toBottomOf="@+id/tvAppOriginalPrice"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvAppOriginalPrice" />
+
+        <TextView
+            android:id="@+id/tvAppRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:textSize="@dimen/appRating"
+            android:textStyle="bold"
+            android:text="4.4"
+            app:layout_constraintEnd_toEndOf="@+id/ivAppIcon"
+            app:layout_constraintStart_toStartOf="@+id/ivAppIcon"
+            app:layout_constraintTop_toBottomOf="@+id/lineDivider" />
+
+        <TextView
+            android:id="@+id/tvAppRatingCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="31.845\nAvaliações"
+            android:textAlignment="center"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="@+id/tvAppRating"
+            app:layout_constraintStart_toStartOf="@+id/tvAppRating"
+            app:layout_constraintTop_toBottomOf="@+id/tvAppRating" />
+
+        <RatingBar
+            android:id="@+id/rbAppRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:max="5"
+            android:isIndicator="true"
+            style="?android:attr/ratingBarStyleIndicator"
+            android:layout_marginLeft="@dimen/itemAppPadding"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/tvAppRatingCount"
+            app:layout_constraintStart_toEndOf="@+id/ivAppIcon"
+            app:layout_constraintTop_toTopOf="@+id/tvAppRating" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvBadges"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:stretchMode="columnWidth"
+            app:layoutManager="android.support.v7.widget.GridLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvAppRatingCount"
+            tools:listitem="@layout/item_badge" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvPreviews"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            app:layoutManager="android.support.v7.widget.GridLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/rvBadges"
+            app:spanCount="4"
+            tools:listitem="@layout/item_preview">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <TextView
+            android:id="@+id/tvDescriptionLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:textStyle="bold"
+            android:textSize="@dimen/itemAppName"
+            android:text="@string/description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvPreviews" />
+
+
+        <TextView
+            android:id="@+id/tvAppDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:paddingBottom="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDescriptionLabel" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v4.widget.NestedScrollView>
