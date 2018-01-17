@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--TextSizes-->
+    <dimen name="appRating">28sp</dimen>
+    <dimen name="appRatingCount">10sp</dimen>
     <dimen name="itemAppName">18sp</dimen>
     <dimen name="itemAppPrice">15sp</dimen>
     <dimen name="itemAppOriginalPrice">12sp</dimen>
+
+    <!--Screen Sizes-->
     <dimen name="itemAppIconHeight">140dp</dimen>
     <dimen name="itemAppCardHeight">280dp</dimen>
     <dimen name="itemAppIconWidth">140dp</dimen>

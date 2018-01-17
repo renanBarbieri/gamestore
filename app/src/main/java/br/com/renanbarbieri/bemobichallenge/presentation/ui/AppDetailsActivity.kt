@@ -7,10 +7,13 @@ import android.support.v4.widget.NestedScrollView
 import android.support.v7.app.AppCompatActivity
 import br.com.renanbarbieri.bemobichallenge.R
 import br.com.renanbarbieri.bemobichallenge.presentation.model.AppModel
+import br.com.renanbarbieri.bemobichallenge.presentation.model.DetailsModel
 import kotlinx.android.synthetic.main.activity_app_details.*
 import kotlinx.android.synthetic.main.content_app_details.*
 
 class AppDetailsActivity : AppCompatActivity() {
+
+    var detailsView: DetailsModel? = null
 
     companion object {
         private val ARG_APP_SELECTED = AppDetailsActivity::class.java.canonicalName+"ARG_APP_SELECTED"
@@ -27,7 +30,12 @@ class AppDetailsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_app_details)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        initView()
+        intent?.extras?.let {
+            if(it.containsKey(ARG_APP_SELECTED)){
+                this.detailsView = DetailsModel(it.get(ARG_APP_SELECTED) as AppModel)
+                initView()
+            }
+        }
     }
 
     private fun initView(){
