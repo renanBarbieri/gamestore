@@ -6,10 +6,12 @@ import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v4.widget.NestedScrollView
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.GridLayoutManager
 import br.com.renanbarbieri.bemobichallenge.GlideApp
 import br.com.renanbarbieri.bemobichallenge.R
 import br.com.renanbarbieri.bemobichallenge.presentation.model.AppModel
 import br.com.renanbarbieri.bemobichallenge.presentation.model.DetailsModel
+import br.com.renanbarbieri.bemobichallenge.presentation.ui.adapter.BadgeAdapter
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import kotlinx.android.synthetic.main.activity_app_details.*
 import kotlinx.android.synthetic.main.content_app_details.*
@@ -18,6 +20,7 @@ import kotlinx.android.synthetic.main.item_app.view.*
 class AppDetailsActivity : AppCompatActivity() {
 
     var detailsView: DetailsModel? = null
+    var badgeAdapter: BadgeAdapter? = null
 
     companion object {
         private val ARG_APP_SELECTED = AppDetailsActivity::class.java.canonicalName+"ARG_APP_SELECTED"
@@ -57,6 +60,12 @@ class AppDetailsActivity : AppCompatActivity() {
                 }
             }
         })
+
+        detailsView?.let {
+            badgeAdapter = BadgeAdapter(context = this, data = it.app.badges)
+            rvBadges.layoutManager = GridLayoutManager(this, 1, GridLayoutManager.HORIZONTAL, false)
+            rvBadges.adapter = this.badgeAdapter
+        }
 
         populateView()
     }
