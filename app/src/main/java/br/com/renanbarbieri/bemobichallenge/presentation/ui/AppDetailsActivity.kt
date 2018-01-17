@@ -63,6 +63,8 @@ class AppDetailsActivity : AppCompatActivity() {
 
     private fun populateView(){
         detailsView?.let {
+            toolbar_layout.title = it.app.name
+
             tvAppName.text = it.app.name
             tvAppProducer.text = it.app.producer
             tvAppPrice.text = getString(R.string.pricePattern, it.app.currency, it.app.price.toFloat())
@@ -79,6 +81,12 @@ class AppDetailsActivity : AppCompatActivity() {
                     .placeholder(R.drawable.placeholder_300x300)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(ivAppIcon.ivAppIcon)
+
+            GlideApp.with(this)
+                    .load(it.app.banner.url)
+                    .placeholder(R.drawable.placeholder_300x300)
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .into(ivHeader)
         }
     }
 }

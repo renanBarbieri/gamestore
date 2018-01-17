@@ -21,7 +21,7 @@
             android:name=".presentation.ui.AppDetailsActivity"
             android:label="@string/title_activity_app_details"
             android:parentActivityName=".presentation.ui.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoStatusBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="br.com.renanbarbieri.bemobichallenge.presentation.ui.MainActivity" />
