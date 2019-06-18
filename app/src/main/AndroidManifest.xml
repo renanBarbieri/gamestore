@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?><!-- suppress AndroidDomInspection -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="br.com.renanbarbieri.bemobichallenge">
+    package="br.com.renanbarbieri.gamestore">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/AppTheme">
-        <activity android:name=".presentation.ui.MainActivity">
+        <activity android:name="br.com.renanbarbieri.gamestore.presentation.ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,13 +18,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".presentation.ui.AppDetailsActivity"
+            android:name="br.com.renanbarbieri.gamestore.presentation.ui.AppDetailsActivity"
             android:label="@string/title_activity_app_details"
-            android:parentActivityName=".presentation.ui.MainActivity"
+            android:parentActivityName="br.com.renanbarbieri.gamestore.presentation.ui.MainActivity"
             android:theme="@style/AppTheme.NoStatusBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="br.com.renanbarbieri.bemobichallenge.presentation.ui.MainActivity" />
+                android:value="br.com.renanbarbieri.gamestore.presentation.ui.MainActivity" />
         </activity>
     </application>
 

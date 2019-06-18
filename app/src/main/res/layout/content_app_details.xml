@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:id="@+id/nsvAppDetailsContent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="br.com.renanbarbieri.bemobichallenge.presentation.ui.AppDetailsActivity"
+    tools:context="br.com.renanbarbieri.gamestore.presentation.ui.AppDetailsActivity"
     tools:showIn="@layout/activity_app_details">
 
     <android.support.constraint.ConstraintLayout

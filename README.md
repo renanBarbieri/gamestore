@@ -1,6 +1,5 @@
-bemobi_challenge
-# Desafio Bemobi
-Este projeto foi desenvolvido para completar o desafio lançalo pela Bemobi.   
+# Game Store
+Este projeto foi desenvolvido para completar um desafio para um processo seletivo.
 Consiste em apresentar uma listagem de apps e seus respectivos detalhes.
  
 ### Dados técnicos

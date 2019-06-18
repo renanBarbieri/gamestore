@@ -12,12 +12,12 @@ ext {
                     ],
 
                     APPLICATION_ID: [
-                            partnerTimDebug   : 'br.com.renanbarbieri.bemobichallenge.tim.apps.dev',
-                            partnerTimRelease : 'br.com.renanbarbieri.bemobichallenge.tim.apps',
-                            partnerVivoDebug  : 'br.com.renanbarbieri.bemobichallenge.vivo.apps.dev',
-                            partnerVivoRelease: 'br.com.renanbarbieri.bemobichallenge.vivo.apps',
-                            debug             : 'br.com.renanbarbieri.bemobichallenge.debug.apps',
-                            release           : 'br.com.renanbarbieri.bemobichallenge.release.apps'
+                            partnerTimDebug   : 'br.com.renanbarbieri.gamestore.tim.apps.dev',
+                            partnerTimRelease : 'br.com.renanbarbieri.gamestore.tim.apps',
+                            partnerVivoDebug  : 'br.com.renanbarbieri.gamestore.vivo.apps.dev',
+                            partnerVivoRelease: 'br.com.renanbarbieri.gamestore.vivo.apps',
+                            debug             : 'br.com.renanbarbieri.gamestore.debug.apps',
+                            release           : 'br.com.renanbarbieri.gamestore.release.apps'
                     ],
 
                     API_DOMAIN       : [
@@ -56,12 +56,12 @@ ext {
                     ],
 
                     APPLICATION_ID: [
-                            partnerTimDebug   : 'br.com.renanbarbieri.bemobichallenge.tim.games.dev',
-                            partnerTimRelease : 'br.com.renanbarbieri.bemobichallenge.tim.games',
-                            partnerVivoDebug  : 'br.com.renanbarbieri.bemobichallenge.vivo.games.dev',
-                            partnerVivoRelease: 'br.com.renanbarbieri.bemobichallenge.vivo.games',
-                            debug             : 'br.com.renanbarbieri.bemobichallenge.debug.games',
-                            release           : 'br.com.renanbarbieri.bemobichallenge.release.games'
+                            partnerTimDebug   : 'br.com.renanbarbieri.gamestore.tim.games.dev',
+                            partnerTimRelease : 'br.com.renanbarbieri.gamestore.tim.games',
+                            partnerVivoDebug  : 'br.com.renanbarbieri.gamestore.vivo.games.dev',
+                            partnerVivoRelease: 'br.com.renanbarbieri.gamestore.vivo.games',
+                            debug             : 'br.com.renanbarbieri.gamestore.debug.games',
+                            release           : 'br.com.renanbarbieri.gamestore.release.games'
                     ],
 
                     API_DOMAIN       : [
@@ -101,13 +101,13 @@ ext {
                     ],
 
                     APPLICATION_ID: [
-                            partnerTimDebug   : 'br.com.renanbarbieri.bemobichallenge.tim.kids.dev',
-                            partnerTimRelease : 'br.com.renanbarbieri.bemobichallenge.tim.kids',
-                            partnerVivoDebug  : 'br.com.renanbarbieri.bemobichallenge.vivo.kids.dev',
-                            partnerVivoRelease: 'br.com.renanbarbieri.bemobichallenge.vivo.kids',
+                            partnerTimDebug   : 'br.com.renanbarbieri.gamestore.tim.kids.dev',
+                            partnerTimRelease : 'br.com.renanbarbieri.gamestore.tim.kids',
+                            partnerVivoDebug  : 'br.com.renanbarbieri.gamestore.vivo.kids.dev',
+                            partnerVivoRelease: 'br.com.renanbarbieri.gamestore.vivo.kids',
 
-                            debug             : 'br.com.renanbarbieri.bemobichallenge.debug.kids',
-                            release           : 'br.com.renanbarbieri.bemobichallenge.release.kids'
+                            debug             : 'br.com.renanbarbieri.gamestore.debug.kids',
+                            release           : 'br.com.renanbarbieri.gamestore.release.kids'
                     ],
 
                     API_DOMAIN       : [
